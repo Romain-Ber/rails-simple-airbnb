@@ -1,0 +1,17 @@
+<%= render 'navbar' %>
+<div class="container">
+  <div class="cards">
+    <h1>All our Flats (<%= @flats.length %>)</h1>
+    <ul class="list-group">
+      <% @flats.each do |flat| %>
+      <li class="list-group-item">
+        <p><strong><%= flat.name %></strong></p>
+        <p>Address: <%= flat.address %></p>
+        <p><%= flat.description %></p>
+        <p>Accomodates <%= flat.number_of_guests %> guests, £<%= flat.price_per_night %> per night</p>
+      </li>
+      <%= link_to "See details", flat_path(flat), class: "btn btn-primary" %>
+      <% end %>
+    </ul>
+  </div>
+</div>
